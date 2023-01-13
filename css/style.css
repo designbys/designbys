@@ -1,0 +1,739 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Permanent+Marker&display=swap');
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+
+body {
+	background: #F4F5F0;
+	color: #000;
+	font-size: 16px;
+	line-height: 1.5;
+	font-family: 'Montserrat', sans-serif;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	overflow-x: hidden;
+}
+
+h1 {
+  font-family: 'Permanent Marker', cursive;
+}
+
+h2 {
+	font-family: 'sackers_gothic_stdheavy';
+	font-size: 16px;
+	line-height: 32px;
+	letter-spacing: 0.8px;
+	text-transform: uppercase;
+}
+
+
+a {
+	outline: none;
+	color: #000;
+	text-decoration: none;
+}
+
+/* GRID */
+
+.row {
+	clear: both;
+	padding: 32px 0;
+	margin: 0px;
+}
+
+.col {
+	display: block;
+	float:left;
+	margin: 1% 0 1% 1.6%;
+}
+.col:first-child { margin-left: 0; }
+
+.row:before,
+.row:after { content:""; display:table; }
+.row:after { clear:both;}
+.row { zoom:1; /* For IE 6/7 */ }
+
+.grid_12 {
+	width: 100%;
+}
+
+.grid_11 {
+  	width: 91.53%;
+}
+.grid_10 {
+  	width: 83.06%;
+}
+
+.grid_9{
+  	width: 74.6%;
+}
+
+.grid_8 {
+  	width: 66.13%;
+}
+
+.grid_7 {
+  	width: 57.66%;
+}
+
+.grid_6{
+  	width: 49.2%;
+}
+
+.grid_5 {
+  	width: 40.73%;
+}
+
+.grid_4 {
+  	width: 32.26%;
+}
+
+.grid_3 {
+  	width: 23.8%;
+}
+
+.grid_2{
+  	width: 15.33%;
+}
+
+.grid_1 {
+  	width: 6.866%;
+}
+
+/*  GO FULL WIDTH BELOW 480 PIXELS */
+@media only screen and (max-width: 768px) {
+	.col {  margin: 1% 0 1% 0%; }
+    
+    .grid_1, .grid_2, .grid_3, .grid_4, .grid_5, .grid_6, .grid_7, .grid_8, .grid_9, .grid_10, .grid_11, .grid_12 {
+	width: 100%; 
+	}
+}
+
+
+/* HEADER */
+
+.dbs-logo{
+    position: absolute;
+    z-index: 99;
+	top: 32px;
+    left: 32px;
+	font-size: 14px;
+	font-family: 'sackers_gothic_stdheavy';
+}
+
+.dbs-about {
+    position: absolute;
+    z-index: 99;
+	top: 32px;
+    right: 32px;
+	font-size: 14px;
+	font-family: 'sackers_gothic_stdheavy';
+    border: 1px solid #000;
+    border-radius: 24px;
+    padding: 4px 24px;
+    text-align: center;
+    cursor: pointer;
+	
+}
+
+input{
+    display: none;
+}
+
+
+.dbs-overlay{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: #EE0007;
+    color: #fff;
+	z-index: 9999;
+}
+
+.dbs-overlay label{
+	width: 24px;
+	height:24px;
+	position: absolute;
+	right: 20px;
+	top: 32px;
+    right: 32px;
+	background: url('../img/close-button.svg');
+	z-index: 100;
+    cursor:pointer;
+}
+
+.dbs-overlay .dbs-profile {
+	position: relative;
+	top: 30%;
+	height: 60%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+
+.dbs-profile {
+    width: 960px;
+    margin: 120px auto;
+}
+
+.dbs-profile h1{
+	font-size: 4em;
+}
+
+.dbs-socials {
+	padding: 24px 0;
+}
+.social{
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	background-size: cover;
+	margin-right: 24px;
+}
+
+.social.email{
+	background-image: url('../img/email.svg');
+}
+
+.social.insta{
+	background-image: url('../img/instagram.svg');
+}
+
+.social.linkedin{
+	background-image: url('../img/linkedin.svg');
+}
+
+.dbs-about~.overlay-hugeinc{
+	opacity: 0;
+	visibility: hidden;
+	-webkit-transition: opacity 0.5s, visibility 0s 0.5s;
+	transition: opacity 0.5s, visibility 0s 0.5s;
+}
+
+#op:checked~.overlay-hugeinc{
+	opacity: 1;
+	visibility: visible;
+	-webkit-transition: opacity 0.5s;
+	transition: opacity 0.5s;
+}
+
+.overlay-hugeinc .dbs-profile {
+	-moz-perspective: 300px;
+}
+
+/* HOME */
+
+.dbs-container {
+    width: 86%;
+    margin: 80px auto;
+}
+
+.dbs-thumb{
+    position: relative;
+	margin: 24px 0;
+}
+
+.dbs-thumb.lower {
+	margin: 120px 0 24px;
+}
+
+.dbs-img{
+    height: 400px;
+	background-size: cover;
+}
+
+.dbs-img.tax-systems{
+	background-image: url('../img/thumbnails/tax-systems-thumb.jpg');
+}
+
+.dbs-img.avast{
+	background-image: url('../img/thumbnails/avast.jpg');
+}
+
+.dbs-img.ocado{
+	background-image: url('../img/thumbnails/ocado.jpg');
+}
+
+
+.dbs-img.iqos{
+	background-image: url('../img/thumbnails/iqos.jpg');
+}
+
+.dbs-img.stella-artois{
+	background-image: url('../img/thumbnails/stella-artois.jpg');
+}
+
+.dbs-img.goalgiving{
+	background-image: url('../img/thumbnails/goalgiving.jpg');
+}
+
+.dbs-img.futurecity{
+	background-image: url('../img/thumbnails/futurecity.jpg');
+}
+
+.dbs-img.adidas{
+	background-image: url('../img/thumbnails/adidas.jpg');
+}
+
+.dbs-img.lobby-tiles{
+	background-image: url('../img/thumbnails/lobby-tiles.jpg');
+}
+
+
+.dbs-img.hertz{
+	background-image: url('../img/thumbnails/hertz.jpg');
+}
+
+.dbs-img.s-ply{
+	background-image: url('../img/thumbnails/s-ply.jpg');
+}
+
+.dbs-img.mysteryvibe{
+	background-image: url('../img/thumbnails/mysteryvibe.jpg');
+}
+
+.dbs-img.iamddb{
+	background-image: url('../img/thumbnails/iamddb.jpg');
+}
+
+.dbs-img.head{
+	background-image: url('../img/thumbnails/head.jpg');
+}
+
+.dbs-img.gamesys{
+	background-image: url('../img/thumbnails/gamesys.jpg');
+}
+
+.dbs-img.edifice{
+	background-image: url('../img/thumbnails/edifice.jpg');
+}
+
+.dbs-img.g-shock{
+	background-image: url('../img/thumbnails/g-shock.jpg');
+}
+
+.dbs-img.baby-g{
+	background-image: url('../img/thumbnails/baby-g.jpg');
+}
+
+.dbs-img.cercle{
+	background-image: url('../img/thumbnails/cercle.jpg');
+}
+
+.dbs-img.cafe-zero{
+	background-image: url('../img/thumbnails/cafe-zero.jpg');
+}
+
+.dbs-img.leo-pharma{
+	background-image: url('../img/thumbnails/leo-pharma.jpg');
+}
+
+.dbs-img.cirque{
+	background-image: url('../img/thumbnails/cirque.jpg');
+}
+
+.dbs-img.lord-willin{
+	background-image: url('../img/thumbnails/lord-willin.jpg');
+}
+
+
+.thumb-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #F4F5F0;
+    text-align: center;
+  }
+  
+  .dbs-thumb:hover .thumb-overlay {
+    opacity: 1;
+  }
+  
+  .dbs-img .tax-systems{
+    background-image: url('');
+  }
+
+  .thumb-overlay h2 {
+    margin-top: 120px;
+  }
+
+  .thumb-overlay h2 span{
+    font-family: 'Montserrat', sans-serif;
+    display: block;
+    font-size: 14px;
+    border: 1px solid #000;
+    border-radius: 24px;
+    padding: 8px;
+    width: 200px;
+    margin: 8px auto;
+  }
+
+  /* PORTFOLIO */
+
+  .dbs-port-container{
+	width: 100%;
+	background: #F7F6ED;
+	overflow: hidden;
+  }
+
+  .footer-nav {
+	width: 100%;
+	background: white;
+	overflow: hidden;
+  }
+
+
+  .dbs-port-header {
+	width: 100%;
+  }
+
+  .dbs-port-header h1 {
+	font-size: 6em;
+	margin-top: 160px;
+	margin-left: 24px;
+  }
+
+  .dbs-port-banner{
+	width: 100%;
+	height: 362px;
+  	background-position: center;
+  	background-repeat: no-repeat;
+  	background-size: cover;
+  }
+
+  .dbs-port-banner.tax-systems{
+	background-image: url('../img/tax-systems/tax-systems-header.jpg');
+  }
+
+  .dbs-port-banner.goalgiving{
+	background-image: url('../img/goalgiving/goalgiving-header.jpg');
+  }
+
+  .dbs-port-banner.avast{
+	background-image: url('../img/avast/avast-header.jpg');
+  }
+  
+  .dbs-port-banner.iqos{
+	background-image: url('../img/iqos/iqos-header.jpg');
+  }
+
+  .dbs-port-banner.stella-artois {
+	background-image: url('../img/stella-artois/stella-artois-header.jpg');
+  }
+
+  .dbs-port-banner.futurecity {
+	background-image: url('../img/futurecity/futurecity-header.jpg');
+  }
+
+  .dbs-port-banner.ocado {
+	background-image: url('../img/ocado/ocado-header.jpg');
+  }
+
+  .dbs-port-banner.adidas {
+	background-image: url('../img/adidas/adidas-header.jpg');
+  }
+
+  .dbs-port-banner.hertz {
+	background-image: url('../img/hertz/hertz-header.jpg');
+  }
+
+  .dbs-port-banner.gamesys {
+	background-image: url('../img/gamesys/gamesys-header.jpg');
+  }
+
+  .dbs-port-banner.lobby-tiles {
+	background-image: url('../img/lobby-tiles/lobby-tiles-header.jpg');
+  }
+
+  .dbs-port-banner.s-ply{
+	background-image: url('../img/s-ply/s-ply-header.jpg');
+  }
+
+  .dbs-port-banner.mysteryvibe{
+	background-image: url('../img/mysteryvibe/mysteryvibe-header.jpg');
+  }
+
+  .dbs-port-banner.iamddb{
+	background-image: url('../img/iamddb/iamddb-header.jpg');
+  }
+
+  .dbs-port-banner.g-shock{
+	background-image: url('../img/g-shock/g-shock-header.jpg');
+  }
+
+  .dbs-port-banner.baby-g{
+	background-image: url('../img/baby-g/baby-g-header.jpg');
+  }
+
+  .dbs-port-banner.edifice{
+	background-image: url('../img/edifice/edifice-header.jpg');
+  }
+
+  .dbs-port-banner.head{
+	background-image: url('../img/head-uk/head-header.jpg');
+  }
+
+  .dbs-port-banner.cercle{
+	background-image: url('../img/cercle/cercle-header.jpg');
+  }
+
+  .dbs-port-banner.cirque{
+	background-image: url('../img/cirque/cirque-header.jpg');
+  }
+
+  .dbs-port-banner.lord-willin{
+	background-image: url('../img/lord-willin/lord-willin-header.jpg');
+  }
+
+  .dbs-port-banner.cafe-zero{
+	background-image: url('../img/cafe-zero/cafe-zero-header.jpg');
+  }
+
+  .dbs-port-banner.leo-pharma{
+	background-image: url('../img/leo-pharma/leo-pharma-header.jpg');
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+  .btn{
+	border: 1px solid #000;
+	border-radius: 50px;
+	background: none;
+	font-family: 'sackers_gothic_stdheavy';
+	padding: 8px 16px;
+  }
+
+  .port-overview p{
+	padding: 12px 0;
+  }
+
+  .port-title {
+	font-size: 16px;
+	padding-bottom: 24px;
+  }
+
+  .dbs-parallax-banner{
+	width: 100%;
+	height: 100vh;
+	background-attachment: fixed;
+  	background-position: center;
+  	background-repeat: no-repeat;
+  	background-size: cover;
+  }
+
+  .dbs-parallax-banner.tax-systems{
+	background-image: url('../img/tax-systems/tax-systems-banner.jpg');
+  }
+
+  .dbs-parallax-banner.goalgiving{
+	background-image: url('../img/goalgiving/gg-banner.jpg');
+  }
+
+  .dbs-parallax-banner.avast{
+	background-image: url('../img/avast/avast-banner.jpg');
+  }
+
+  .dbs-parallax-banner.iqos{
+	background-image: url('../img/iqos/iqos-banner.jpg');
+  }
+
+  .dbs-parallax-banner.stella-artois{
+	background-image: url('../img/stella-artois/stella-artois-banner.jpg');
+  }
+
+  .dbs-parallax-banner.futurecity{
+	background-image: url('../img/futurecity/futurecity-banner.jpg');
+  }
+
+  .dbs-parallax-banner.ocado{
+	background-image: url('../img/ocado/ocado-banner.jpg');
+  }
+
+  .dbs-parallax-banner.adidas{
+	background-image: url('../img/adidas/adidas-banner-1.jpg');
+  }
+
+  .dbs-parallax-banner.hertz{
+	background-image: url('../img/hertz/hertz-banner.jpg');
+  }
+
+  .dbs-parallax-banner.gamesys{
+	background-image: url('../img/gamesys/gamesys-banner.jpg');
+  }
+
+  .dbs-parallax-banner.lobby-tiles{
+	background-image: url('../img/lobby-tiles/lobby-tiles-banner.jpg');
+  }
+
+  .dbs-parallax-banner.s-ply {
+	background-image: url('../img/s-ply/s-ply-banner.jpg');
+  }
+
+  .dbs-parallax-banner.mysteryvibe {
+	background-image: url('../img/mysteryvibe/mysteryvibe-banner.jpg');
+  }
+
+  .dbs-parallax-banner.iamddb {
+	background-image: url('../img/iamddb/iamddb-banner.jpg');
+  }
+
+  .dbs-parallax-banner.g-shock {
+	background-image: url('../img/g-shock/g-shock-large.jpg');
+  }
+
+  .dbs-parallax-banner.baby-g {
+	background-image: url('../img/baby-g/baby-g-banner.jpg');
+  }
+
+  .dbs-parallax-banner.edifice {
+	background-image: url('../img/edifice/edifice-banner.jpg');
+  }
+
+  .dbs-parallax-banner.head {
+	background-image: url('../img/head-uk/head-banner.jpg');
+  }
+
+  .dbs-parallax-banner.cercle {
+	background-image: url('../img/cercle/cercle-banner.jpg');
+  }
+
+  .dbs-parallax-banner.cirque {
+	background-image: url('../img/cirque/cirque-banner.jpg');
+  }
+
+  .dbs-parallax-banner.lord-willin {
+	background-image: url('../img/lord-willin/lord-willin-banner.jpg');
+  }
+
+  .dbs-parallax-banner.cafe-zero {
+	background-image: url('../img/cafe-zero/cafe-zero-banner.jpg');
+  }
+
+  .dbs-parallax-banner.leo-pharma {
+	background-image: url('../img/leo-pharma/leo-pharma-banner.jpg');
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+  .port-img {
+	width: 100%;
+	padding: 16px 0;
+  }
+
+  .port-img-lower {
+	padding: 80px 0 16px;
+  }
+
+  @media only screen and (max-width: 768px) {
+
+	body{
+		font-size: 80%;
+	}
+	.dbs-port-header h1{
+		font-size: 4em;
+	}
+
+	.btn{
+		margin-bottom: 24px;
+	}
+  }
